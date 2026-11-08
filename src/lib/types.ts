@@ -1,4 +1,12 @@
-export type EventColor = "green" | "purple" | "cyan" | "orange" | "pink" | "blue";
+export type EventColor =
+  | "green"
+  | "purple"
+  | "cyan"
+  | "orange"
+  | "pink"
+  | "blue"
+  | "teal"
+  | "slate";
 export type ScheduleType = "GO tutoring" | "TST" | "UAS" | "School event" | "Personal activity" | "Appointment" | "Other";
 
 /** Dates are local calendar days stored as "YYYY-MM-DD"; times are minutes from midnight. */
