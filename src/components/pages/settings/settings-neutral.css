@@ -1,0 +1,73 @@
+/* ================================================================== */
+/* Settings page: neutral palette, scoped.                             */
+/* Only the Settings page (and its portalled Select / Reset dialog)    */
+/* is neutral; the calendar, roadmap and progress keep the app theme.  */
+/* Green stays for success states and primary actions only.            */
+/* ================================================================== */
+.settings-neutral,
+body:has(.settings-neutral) [data-slot="select-content"],
+body:has(.settings-neutral) [data-slot="alert-dialog-content"] {
+  --bg-app: #F7F7F5;
+  --bg-surface: #FFFFFF;
+  --bg-selected: #F0F0EE; /* elevated surface */
+  --bg-hover: #F0F0EE;
+  --border-hairline: #E5E5E2;
+  --border-subtle: #EDEDEA;
+  --border-control: #D6D6D2;
+  --border-segment: #C9C9C5;
+  --text-primary: #20211F;
+  --text-heading: #20211F;
+  --text-secondary: #686A66;
+  --icon: #75776F;
+  --popover: #FFFFFF;
+  --popover-foreground: #20211F;
+  --accent: #F0F0EE;
+  --accent-foreground: #20211F;
+  --border: #E5E5E2;
+  --settings-accent: #3C74B5; /* subtle blue: active tab, selected theme */
+  --settings-on-accent: #FFFFFF;
+  --glass-bg: rgba(255, 255, 255, 0.97);
+  --glass-bg-panel: rgba(255, 255, 255, 0.95);
+  --glass-sticky: rgba(255, 255, 255, 0.96);
+  --glass-solid: #FFFFFF;
+  --glass-shadow: 0 1px 0 rgba(255, 255, 255, 0.7) inset, 0 6px 24px rgba(32, 33, 31, 0.06);
+}
+[data-theme="dark"] .settings-neutral,
+[data-theme="dark"] body:has(.settings-neutral) [data-slot="select-content"],
+[data-theme="dark"] body:has(.settings-neutral) [data-slot="alert-dialog-content"] {
+  --bg-app: #111213;
+  --bg-surface: #1B1C1E;
+  --bg-selected: #242527;
+  --bg-hover: #242527;
+  --border-hairline: #333538;
+  --border-subtle: #2A2C2E;
+  --border-control: #45484C;
+  --border-segment: #4A4D51;
+  --text-primary: #F2F2F0;
+  --text-heading: #F2F2F0;
+  --text-secondary: #B5B6B8;
+  --icon: #9A9B9E;
+  --popover: #1B1C1E;
+  --popover-foreground: #F2F2F0;
+  --accent: #242527;
+  --accent-foreground: #F2F2F0;
+  --border: #333538;
+  --settings-accent: #7FA8DC;
+  --settings-on-accent: #111213;
+  --glass-bg: rgba(27, 28, 30, 0.96);
+  --glass-bg-panel: rgba(27, 28, 30, 0.94);
+  --glass-sticky: rgba(27, 28, 30, 0.96);
+  --glass-solid: #1B1C1E;
+  --glass-shadow: 0 1px 0 rgba(242, 242, 240, 0.05) inset, 0 8px 28px rgba(0, 0, 0, 0.32);
+}
+/* The page root must not paint a solid colour, or the animated background is hidden. */
+.settings-neutral {
+  background-color: transparent;
+  color: var(--text-primary);
+}
+/* Glass here keeps the blur but not the saturation boost, which would amplify the video's colour. */
+.settings-neutral .glass,
+.settings-neutral .glass-panel {
+  -webkit-backdrop-filter: blur(var(--glass-blur));
+  backdrop-filter: blur(var(--glass-blur));
+}
